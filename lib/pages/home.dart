@@ -1,4 +1,4 @@
-import 'ardino.dart';
+import 'archampion.dart';
 import 'package:flutter/material.dart';
 import 'package:augmented_reality_plugin_wikitude/wikitude_plugin.dart';
 import 'package:augmented_reality_plugin_wikitude/wikitude_response.dart';
@@ -13,22 +13,39 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<String> features = ["image_tracking"];
 
-  @override
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("My Flutter AR App"),
+        title: const Text("Welcome to my AR project"),
       ),
       body: Center(
-        child: ElevatedButton(
-            onPressed: navigateToDinos, child: const Text("Scan de dino's!")),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Text(
+                "Explore the world of League of Legends champions in Augmented Reality!",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: navigateToChampions,
+              child: const Text("Scan a champion"),
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  void navigateToDinos() {
-    debugPrint("Wij gaan naar dino's");
-
+  void navigateToChampions() {
     checkDeviceCompatibility().then((value) => {
           if (value.success)
             {
@@ -37,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                       {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const ArDinoPage()),
+                          MaterialPageRoute(builder: (context) => const ArChampionPage()),
                         )
                       }
                     else

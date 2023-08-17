@@ -2,15 +2,15 @@ import 'package:augmented_reality_plugin_wikitude/architect_widget.dart';
 import 'package:augmented_reality_plugin_wikitude/startupConfiguration.dart';
 import 'package:flutter/material.dart';
 
-class ArMultipleTargetsWidget extends StatefulWidget {
-  const ArMultipleTargetsWidget({Key? key}) : super(key: key);
+class ArChampionsWidget extends StatefulWidget {
+  const ArChampionsWidget({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() =>
-      _ArMultipleTargetsWidgetState();
+      _ArChampionsWidgetState();
 }
 
-class _ArMultipleTargetsWidgetState extends State<ArMultipleTargetsWidget>
+class _ArChampionsWidgetState extends State<ArChampionsWidget>
     with WidgetsBindingObserver {
   late ArchitectWidget architectWidget;
   String wikitudeTrialLicenseKey =
@@ -66,7 +66,7 @@ class _ArMultipleTargetsWidgetState extends State<ArMultipleTargetsWidget>
 
   Future<void> onArchitectWidgetCreated() async {
     architectWidget.load(
-        "samples/03_MultipleTargets_1_MultipleTargets/index.html",
+        "samples/championsAR/index.html",
         onLoadSuccess,
         onLoadFailed);
     architectWidget.resume();
