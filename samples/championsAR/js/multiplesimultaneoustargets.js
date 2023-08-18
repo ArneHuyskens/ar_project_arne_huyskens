@@ -78,7 +78,6 @@ var World = {
                     .then(response => response.json())
                     .then(data => {
                         const championInfo = data.data[recognizedTargetName];
-                        console.log(championInfo);
                         if (championInfo) {
                             // Create champion info HTML content using fetched data
                             const championInfoHtml = `
@@ -105,7 +104,7 @@ var World = {
                             splashArtImage.zOrder = 0;
 
                             // Play a voice line of the scanned champion
-                            championVoice = new AR.Sound("assets/videos/" + recognizedTargetName + ".wav", {});
+                            championVoice = new AR.Sound("assets/voices/" + recognizedTargetName + ".wav", {});
                             championVoice.play();
 
                             // Assign the updated champion info HTML drawable to the recognized target's drawables

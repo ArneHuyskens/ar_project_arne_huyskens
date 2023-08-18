@@ -26,22 +26,29 @@ class _HomePageState extends State<HomePage> {
             const Padding(
               padding: EdgeInsets.all(20.0),
               child: Text(
-                "Explore the world of League of Legends champions in Augmented Reality!",
+                "Explore the world of League of Legends in Augmented Reality!\n\n Press the scan button and scan the icon of your favorite champions to begin!",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
                 textAlign: TextAlign.center,
               ),
             ),
             ElevatedButton(
               onPressed: navigateToChampions,
-              child: const Text("Scan a champion"),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).primaryColor, // Use League of Legends red
+              ),
+              child: const Text(
+                "Scan a champion",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),
       ),
+      backgroundColor: Theme.of(context).colorScheme.secondary, // Use League of Legends black
     );
   }
 

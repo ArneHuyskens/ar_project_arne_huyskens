@@ -14,7 +14,10 @@ class MyFlutterArApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'AR Project Arne Huyskens',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primaryColor: const Color(0xFFE21F30), // League of Legends red
+        colorScheme: const ColorScheme.dark(
+          secondary: Color(0xFF1C1D21), // League of Legends black
+        ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: const HomePage(),
